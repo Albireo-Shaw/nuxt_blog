@@ -1,5 +1,11 @@
 <template>
   <footer>
-    Visit our website for more documentation : <a href="https://nuxtjs.org" target="_blank">nuxtjs.org</a>
+    Copyleft©2018 版权所无
   </footer>
 </template>
+
+<style scoped>
+	footer {
+		text-align: right;
+	}
+</style>
