@@ -10,7 +10,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'shaw\'s blog.' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'}
     ]
   },
   /*

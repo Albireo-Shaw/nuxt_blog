@@ -1,12 +1,17 @@
 <template>
 	<header>
 		<h1>Anonoymous Blog</h1>
-		<ul class="channel">
-			<li>泛泛之谈</li>
-			<li>闲言碎语</li>
-			<li>幻海来鸿</li>
-			<li>关于</li>
-		</ul>
+		<div class="channel-container">
+			<ul class="channel">
+				<li>泛泛之谈</li>
+				<li>闲言碎语</li>
+				<li>幻海来鸿</li>
+				<li>关于</li>
+			</ul>
+		</div>
+		<div class="bars">
+			<i class="fa fa-bars"></i>
+		</div>
 	</header>
 </template>
 
@@ -23,9 +28,15 @@
 			margin: 0;
 			line-height: 4.5rem;
 		}
+		.channel-container {
+			overflow: hidden;
+			float: left;
+			@media screen and (max-width: 600px) {
+				display: none;
+			}
+		}
 		.channel {
 			list-style: none;
-			float: left;
 			margin: 0;
 			line-height: 4.5rem;
 		}
@@ -33,6 +44,17 @@
 			float: left;
 			margin-right: 2rem;
 			font-size: 1.4rem;
+		}
+		.bars {
+			float: right;
+			padding-right: 5%;
+			i {
+				font-size: 2.4rem;
+				line-height: 4.5rem;
+			}
+			@media screen and (min-width: 600px) {
+				display: none;
+			}
 		}
 	}
 </style>
