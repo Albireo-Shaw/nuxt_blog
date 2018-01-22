@@ -1,7 +1,10 @@
 <template>
 	<header>
 		<h1>Anonoymous Blog</h1>
-		<div class="channel-container">
+		<div class="bars">
+			<i class="fa fa-bars" @click="showChannel"></i>
+		</div>
+		<div :class="channelClass">
 			<ul class="channel">
 				<li>泛泛之谈</li>
 				<li>闲言碎语</li>
@@ -9,11 +12,27 @@
 				<li>关于</li>
 			</ul>
 		</div>
-		<div class="bars">
-			<i class="fa fa-bars"></i>
-		</div>
 	</header>
 </template>
+
+<script>
+	export default {
+		data () {
+			return {
+				channelClass: {
+					'channel-container': true,
+					'mobile-channel': false 
+				}
+			}
+		},
+		methods: {
+			showChannel() {
+				console.log('???', this.channelClass['mobile-channel'])
+				this.channelClass['mobile-channel'] = !this.channelClass['mobile-channel'];
+			}
+		}
+	}
+</script>
 
 <style scoped lang="scss">
 	header {
@@ -30,15 +49,21 @@
 		}
 		.channel-container {
 			overflow: hidden;
-			float: left;
+			float: right;
+			padding-right: 5%;
 			@media screen and (max-width: 600px) {
-				display: none;
+				float: none;
+				clear: right;
+				overflow: hidden;
+				height: 0;
+				transition: all 0.2s ease-in;
 			}
 		}
 		.channel {
 			list-style: none;
 			margin: 0;
 			line-height: 4.5rem;
+			overflow: hidden;
 		}
 		.channel li {
 			float: left;
@@ -55,6 +80,11 @@
 			@media screen and (min-width: 600px) {
 				display: none;
 			}
+		}
+		.mobile-channel {
+			height: 5rem;
+			margin-bottom: -1.5rem;
+			background: #eee;
 		}
 	}
 </style>
